@@ -41,7 +41,14 @@ class FamilyStructure:
 
     def add_member(self, member):
         # fill this method and update the return
-        pass
+        
+        if member['id'] is None:
+            member['id']= self._generateId()
+
+        print(member['id'])
+        member['last_name']=self.last_name
+        self._members.append(member)
+        return 
 
     def delete_member(self, id):
         # fill this method and update the return
