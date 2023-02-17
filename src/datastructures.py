@@ -51,8 +51,15 @@ class FamilyStructure:
         return 
 
     def delete_member(self, id):
-        # fill this method and update the return
-        pass
+        # Respondemos True sólo si se realiza una eliminación real
+        respuesta=False
+        for member in self._members:
+            if member["id"] == int(id):
+                respuesta=True
+
+        self._members = list(filter(lambda i: i['id'] != id, self._members))
+        print(self._members)
+        return respuesta
 
     def get_member(self, id):
         # fill this method and update the return

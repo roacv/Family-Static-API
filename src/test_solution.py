@@ -20,6 +20,7 @@ def client():
 def test_first_three(client):
     response = client.get('/members')
     members = json.loads(response.data)
+    print(members)
     assert len(members) == 3
 
 @pytest.mark.it("Implement method POST /member to add a new member")
